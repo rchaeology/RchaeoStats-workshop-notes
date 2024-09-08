@@ -30,7 +30,6 @@ Here are the shortened urls linking to the modified data:
 - :file_folder: data/
 - :file_folder: data-raw/
   + [:page_facing_up: mortuary_data.R](/RchaeoStats-workshop/data-raw/mortuary_data.R)
-  + [:page_facing_up: sheep_data.R]
 - :file_folder: docs/
   + [:page_facing_up: manuscript.qmd](/RchaeoStats-workshop/docs/manuscript.qmd)
 - :file_folder: figures/
