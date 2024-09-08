@@ -1,6 +1,6 @@
-# [Name of workshop]
+# RchaeoStats @ DAI
 
-R workshop at [Location], [Date].
+R workshop at Deutsches Archäologisches Institut, 9-11 September, 2024.
 
 The workshop materials are still under development and are not yet available.
 The scripts, data, and Quarto document created during the workshop 
