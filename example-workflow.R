@@ -8,6 +8,9 @@ head(sheep_data)
 # show the first 10 rows of our data
 head(sheep_data, n = 10)
 
+
+# Data visualisation ------------------------------------------------------
+
 ggplot(
   data = sheep_data, 
   mapping = aes(x = GLl, y = Bd, colour = Zone)
@@ -28,4 +31,8 @@ ggplot(
     x = "Greatest lateral length (cm)",
     y = "Breadth of distal end (cm)"
   )
+
+
+# Data transformation -----------------------------------------------------
+
 
