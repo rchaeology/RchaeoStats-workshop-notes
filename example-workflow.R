@@ -90,8 +90,25 @@ dimension_data <- sheep_data |>
 dimension_data |>
   group_by(Zone) |>
   summarise(
-    mean_Dl_GLl = mean(Dl_GLl)
+    n = n(),
+    mean_Dl_GLl = mean(Dl_GLl),
+    sd_Dl_GLl = sd(Dl_GLl)
   )
+
+dimension_data |>
+  ggplot(aes(x = Zone, y = Dl_GLl, fill = Zone)) +
+  geom_boxplot() +
+  geom_jitter(
+    height = 0.2,
+    width = 0.2
+  ) +
+  theme_bw() +
+  theme(legend.position = "none")
+
+ggsave("my-first-plot.png", dpi = 300, height = 6, width = 7, units = "in")
+
+
+
   
   
   
