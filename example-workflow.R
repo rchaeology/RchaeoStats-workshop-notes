@@ -35,4 +35,29 @@ ggplot(
 
 # Data transformation -----------------------------------------------------
 
+filter(sheep_data, Zone == "Coastal")
+
+filter(sheep_data, Zone == "Coastal" | Zone == "Inland")
+
+filter(sheep_data, Zone != "Cyprus")
+
+sheep_data$Zone != "Cyprus"
+
+filtered_zone <- filter(sheep_data, Zone != "Cyprus")
+
+arrange(filtered_zone, GLl) # increasing values
+arrange(filtered_zone, desc(GLl)) # descending values
+
+mutate(filtered_zone, dataset = "Sheep Astragali")
+
+dim_index <- mutate(filtered_zone, Dl_GLl = Dl / GLl * 100)
+
+# A bad way to do it
+mutate(filter(sheep_data, Zone != "Cyprus"), Dl_GLl = Dl / GLl * 100)
+
+sheep_data |> # and then
+  filter(Zone != "Cyprus") |> # and then
+  mutate(Dl_GLl = Dl / GLl * 100)
+
+
 
