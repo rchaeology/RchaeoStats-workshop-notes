@@ -87,7 +87,11 @@ dimension_data <- sheep_data |>
     Bd_Dl = Bd / Dl * 100
   )
   
-
+dimension_data |>
+  group_by(Zone) |>
+  summarise(
+    mean_Dl_GLl = mean(Dl_GLl)
+  )
   
   
   
