@@ -59,5 +59,39 @@ sheep_data |> # and then
   filter(Zone != "Cyprus") |> # and then
   mutate(Dl_GLl = Dl / GLl * 100)
 
+# select columns by name
+select(sheep_data, specID, Zone, GLl, Dl)
+
+# select columns by position
+select(sheep_data, 1, 4, 7, 9)
+
+select(sheep_data, !Taxon)
+
+select(sheep_data, !c(Taxon, Site, Period))
+select(sheep_data, !c(2, 3, 5))
+
+sheep_data |>
+  filter(Zone != "Cyprus") |> # Inland and Coastal zones
+  select(specID, Zone, GLl, Bd, Dl) |> # select columns
+  mutate(
+    Dl_GLl = Dl / GLl * 100, # calculate indices
+    Bd_Dl = Bd / Dl * 100
+  ) |>
+  filter(Dl_GLl > 56) # only observations over 56
+  
+dimension_data <- sheep_data |>
+  filter(Zone != "Cyprus") |>
+  select(specID, Zone, GLl, Bd, Dl) |>
+  mutate(
+    Dl_GLl = Dl / GLl * 100,
+    Bd_Dl = Bd / Dl * 100
+  )
+  
+
+  
+  
+  
+  
+  
 
 
