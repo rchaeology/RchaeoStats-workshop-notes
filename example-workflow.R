@@ -99,11 +99,11 @@ dimension_data |>
   ggplot(aes(x = Zone, y = Dl_GLl, fill = Zone)) +
   geom_boxplot() +
   geom_jitter(
-    height = 0.2,
-    width = 0.2
+    height = 0.2, # reduce random noise on y-axis
+    width = 0.2 # reduce random noise on x-axis
   ) +
   theme_bw() +
-  theme(legend.position = "none")
+  theme(legend.position = "none") # remove redundant legend
 
 ggsave("my-first-plot.png", dpi = 300, height = 6, width = 7, units = "in")
 
