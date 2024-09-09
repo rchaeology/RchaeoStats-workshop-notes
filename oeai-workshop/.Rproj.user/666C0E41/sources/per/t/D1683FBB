@@ -1,0 +1,27 @@
+{
+    "id": "D1683FBB",
+    "path": "~/Nextcloud/Uni/projects/daist-stats/workshops/2024-05-28_oeai-workshop/oeai-workshop/scripts/01_data-viz.R",
+    "project_path": "scripts/01_data-viz.R",
+    "type": "r_source",
+    "hash": "2299356118",
+    "contents": "",
+    "dirty": false,
+    "created": 1716815794977.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "tempName": "Untitled1",
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "48,3",
+        "scrollLine": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1716818834,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1716818834482,
+    "read_only": false,
+    "read_only_alternatives": []
+}
