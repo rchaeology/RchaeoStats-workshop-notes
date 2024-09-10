@@ -36,3 +36,12 @@ renamed_data[["Width"]] # show the Width column as vector
 renamed_data[, 6] # show the sixth column as dataframe
 renamed_data[1, 6] # # show the first row and sixth column as data frame
 
+# Data types
+
+num_char <- c(1, 2, 3, "a")
+num_logical <- c(1, 2, 3, TRUE)
+char_logical <- c("a", "b", "c", TRUE)
+tricky <- c(1, 2, 3, "4")
+
+
+
