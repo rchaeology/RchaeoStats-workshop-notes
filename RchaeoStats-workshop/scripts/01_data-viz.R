@@ -29,6 +29,8 @@ factor(
 )
 
 ## two cats
+
+# bar chart
 mortuary_data |>
   ggplot(aes(x = Phase, fill = Condition)) +
     geom_bar()
@@ -61,13 +63,16 @@ mortuary_data |>
   mutate(
     Phase = factor(
       Phase,
-      levels = c("chi", "pre", "euro", "post", "disturbed"),
+      levels = c("chi", "pre", "euro", "post", "disturbed"), # order chronologically
       ordered = TRUE
     ),
     Condition = as_factor(Condition)
   ) |>
   ggplot(aes(x = Phase, fill = Condition)) +
   geom_bar(position = "fill")
+
+
+
 
 
   
