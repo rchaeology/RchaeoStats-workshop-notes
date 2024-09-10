@@ -103,4 +103,5 @@ data_clean |>
   ggplot(aes(x = Width, y = Height, col = Phase)) +
   geom_point()
 
+write_csv(data_clean, here("data/mortuary_clean.csv"))
 
