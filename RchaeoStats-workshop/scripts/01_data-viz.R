@@ -91,6 +91,33 @@ mortuary_data |>
   ggplot(aes(x = Length)) +
     geom_density()
 
+# show mean of Length
+mortuary_data |>
+  ggplot(aes(x = Length)) +
+  geom_density() +
+  geom_vline(xintercept = mean(mortuary_data$Length, na.rm = T), linetype = "dotted")
+
+mean(mortuary_data$Length, na.rm = T)
+
+# density within groups
+
+mortuary_data |>
+  ggplot(aes(x = Length, fill = as_factor(Condition))) +
+    geom_density(alpha = 0.6)
+
+mortuary_data |>
+  ggplot(aes(x = Length, fill = Phase)) +
+    geom_density() +
+    facet_wrap(~ Phase, ncol = 1)
+
+
+
+
+
+
+
+
+
   
   
 
