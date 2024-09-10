@@ -80,5 +80,20 @@ mortuary_data |>
 mortuary_data |>
   select(ends_with("bead"))
 
+mortuary_data |>
+  group_by(Phase) |>
+  summarise(
+    across(
+      ends_with("bead"),
+      list(
+        mean = ~ mean(.x, na.rm = T),
+        sd = ~ sd(.x, na.rm = T)
+      )
+    )
+  )
+
+
+
+
 
 
