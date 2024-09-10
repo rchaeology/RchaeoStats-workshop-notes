@@ -94,6 +94,24 @@ mortuary_data |>
 
 # lists
 
+my_list <- list(
+  "a_vector" = mortuary_data$Width,
+  "a_data_frame" = mortuary_data,
+  "a_function" = mean,
+  "etc" = "etc"
+)
+
+# access list elements
+
+my_list$a_data_frame$ID
+
+my_list$a_function(mortuary_data$Width, na.rm = T)
+
+
+
+
+
+
 
 
 
