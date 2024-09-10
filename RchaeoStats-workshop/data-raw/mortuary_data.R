@@ -95,7 +95,8 @@ data_clean <- raw_data |>
   mutate(
     Width = str_remove(Width, "\\+"),
     Length = str_remove(Length, "\\+")
-  )
+  ) |>
+  mutate(across(c(Glass_bead, IndoPacific_bead, Width, Length), as.numeric))
 view(data_clean)
 
 data_clean |>
