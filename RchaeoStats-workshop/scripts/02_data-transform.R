@@ -107,7 +107,10 @@ my_list$a_data_frame$ID
 
 my_list$a_function(mortuary_data$Width, na.rm = T)
 
-
+## Exercise
+# select all columns with a "Metal" artefact,
+# calculate mean and sd
+# grouped by Phase
 
 
 
