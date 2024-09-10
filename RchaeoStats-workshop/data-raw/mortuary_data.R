@@ -19,6 +19,8 @@ raw_data |>
   ggplot(aes(x = Width, y = Hight, col = Phase)) +
     geom_point()
 
+names(raw_data) # check column names
+
 str(raw_data)
 raw_data$Width
 
