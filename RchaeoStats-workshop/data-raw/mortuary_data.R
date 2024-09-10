@@ -96,7 +96,10 @@ data_clean <- raw_data |>
     Width = str_remove(Width, "\\+"),
     Length = str_remove(Length, "\\+")
   )
+view(data_clean)
 
-
+data_clean |>
+  ggplot(aes(x = Width, y = Height, col = Phase)) +
+  geom_point()
 
 
