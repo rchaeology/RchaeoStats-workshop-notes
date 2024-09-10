@@ -21,3 +21,23 @@ filter(mortuary_data, Height >= 20 | Height < 10)
 filter(mortuary_data, Height < 20 & Height > 10)
 
 as.data.frame(mortuary_data)
+
+select(filter(mortuary_data, Phase == "pre"), ID, Golden_bead, Small_Metal_ring)
+
+# Groups
+
+class(group_by(mortuary_data, Phase))
+
+summarise(
+  mortuary_data,
+  n = n(),
+  mean_golden = mean(Golden_bead, na.rm = T),
+  median_golden = median(Golden_bead, na.rm = T),
+  sd_golden = sd(Golden_bead, na.rm = T),
+  .by = Phase
+) # NaN = not a number
+
+count(mortuary_data, Phase) # count each level of Phase
+
+
+
