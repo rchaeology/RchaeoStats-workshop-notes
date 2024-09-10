@@ -39,5 +39,22 @@ summarise(
 
 count(mortuary_data, Phase) # count each level of Phase
 
+mortuary_data |>
+  group_by(Phase) |>
+  summarise(
+    across(
+      c(Golden_bead, Glass_bead, IndoPacific_bead),
+      ~ mean(.x, na.rm = T)
+    )
+  )
 
+mortuary_data |>
+  group_by(Phase) |>
+  summarise(
+    across(
+      Agate_bead:Metal_piece,
+      ~ mean(.x, na.rm = T)
+    )
+  )
 
+# selection helpers
