@@ -112,6 +112,18 @@ my_list$a_function(mortuary_data$Width, na.rm = T)
 # calculate mean and sd
 # grouped by Phase
 
+mortuary_data |>
+  rename(Big_metal_ring = Big_Metal_ring) |>
+  group_by(Phase) |>
+  summarise(
+    across(
+      contains("Metal", ignore.case = F),
+      list(
+        "mean" = ~ mean(.x, na.rm = T),
+        "sd" = ~ mean(.x, na.rm = T)
+      )
+    )
+  )
 
 
 
