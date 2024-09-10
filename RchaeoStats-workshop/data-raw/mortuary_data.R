@@ -7,7 +7,7 @@ library(here)
 #  mode = "wb"
 #)
 
-raw_data <- read_xlsx("data-raw/mortuary-data.xlsx")
+raw_data <- read_xlsx(here("data-raw/mortuary-data.xlsx"))
 
 # produce scatter plot of Height and Width and colour by Phase
 
