@@ -73,11 +73,24 @@ mortuary_data |>
 
 
 # continuous variables
+# histogram
+mortuary_data |>
+  ggplot(aes(x = Length)) +
+    geom_histogram()
 
+mortuary_data |>
+  ggplot(aes(x = Length)) +
+  geom_histogram(bins = 10) # number of bins
 
+mortuary_data |>
+  ggplot(aes(x = Length)) +
+  geom_histogram(bins = 40)
 
+# density plot
+mortuary_data |>
+  ggplot(aes(x = Length)) +
+    geom_density()
 
-  
   
   
 
