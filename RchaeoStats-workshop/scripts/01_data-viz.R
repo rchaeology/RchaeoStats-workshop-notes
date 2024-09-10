@@ -72,6 +72,8 @@ mortuary_data |>
   geom_bar(position = "fill")
 
 
+# continuous variables
+
 
 
 
