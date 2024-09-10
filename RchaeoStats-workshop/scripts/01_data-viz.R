@@ -106,9 +106,67 @@ mortuary_data |>
     geom_density(alpha = 0.6)
 
 mortuary_data |>
+  filter(Condition != "disturbed") |>
+  remove_missing(vars = "Phase") |>
+  mutate(
+    Phase = factor(
+      Phase,
+      levels = c("chi", "pre", "euro", "post", "disturbed"), # order chronologically
+      ordered = TRUE
+    ),
+    Condition = as_factor(Condition)
+  ) |>
   ggplot(aes(x = Length, fill = Phase)) +
     geom_density() +
     facet_wrap(~ Phase, ncol = 1)
+
+# two continuous variables
+
+mortuary_data |>
+  ggplot(aes(x = Length, y = Width)) +
+  geom_point(colour = "red", size = 4, shape = 2)
+
+mortuary_data |>
+  ggplot(aes(x = Length, y = Width)) +
+  geom_point(aes(colour = as_factor(Condition), size = Width, shape = Phase))
+
+# mixed continuous and categorical
+
+phase_height_plot <- mortuary_data |>
+  remove_missing(vars = "Phase") |>
+  ggplot(aes(x = Phase, y = Height)) +
+    geom_violin(aes(fill = Phase)) +
+    geom_boxplot(width = 0.2) +
+    geom_jitter(
+      width = 0.2,
+      height = 0.2,
+      alpha = 0.6
+    ) +
+    theme_bw() +
+    theme(
+      legend.position = "none",
+      panel.grid.major.x = element_blank(),
+      axis.ticks = element_blank()
+      ) #+ theme_void() # remove all plot aspects
+
+ggsave(here("figures/phase-height-boxplot.png"), plot = phase_height_plot)
+
+my_theme <- theme(axis.title = element_text(size = 32))
+
+mortuary_data |>
+  ggplot(aes(x = Length)) +
+  geom_histogram() +
+  my_theme
+
+
+
+
+
+
+
+
+
+
 
 
 
