@@ -42,6 +42,61 @@ num_char <- c(1, 2, 3, "a") # character
 num_logical <- c(1, 2, 3, TRUE) # numeric; TRUE -> 1; FALSE -> 0
 char_logical <- c("a", "b", "c", TRUE) # character
 tricky <- c(1, 2, 3, "4") # character
+c(1,2,3,-4)
+as.numeric(tricky)
+
+# logical > numeric > character
+renamed_data$IndoPacific_bead
+renamed_data$Glass_bead
+
+renamed_data |>
+  mutate(
+    Glass_bead = if_else(condition = Glass_bead == "shatter", true = NA, false = Glass_bead)
+  )
+
+renamed_data$Glass_bead == "shatter"
+
+renamed_data$IndoPacific_bead
+
+renamed_data |>
+  mutate(
+    IndoPacific_bead = case_when(
+      IndoPacific_bead == "cluster" ~ NA,
+      IndoPacific_bead == "unsure number" ~ NA,
+      .default = IndoPacific_bead
+    )
+  )
+
+renamed_data$Width
+renamed_data$Length
+
+renamed_data |>
+  mutate(
+    Width = str_remove(Width, "\\+"), # same
+    Length = str_remove(Length, fixed("+")) # same 
+  )
+
+
+data_clean <- raw_data |>
+  rename(
+    Height = Hight,
+    IndoPacific_bead = `Indo-Pacific_bead`
+  ) |>
+  mutate(
+    Glass_bead = if_else(Glass_bead == "shatter", NA, Glass_bead)
+  ) |>
+  mutate(
+    IndoPacific_bead = case_when(
+      IndoPacific_bead == "cluster" ~ NA,
+      IndoPacific_bead == "unsure number" ~ NA,
+      .default = IndoPacific_bead
+    )
+  ) |>
+  mutate(
+    Width = str_remove(Width, "\\+"),
+    Length = str_remove(Length, "\\+")
+  )
+
 
 
 
