@@ -38,10 +38,10 @@ renamed_data[1, 6] # # show the first row and sixth column as data frame
 
 # Data types
 
-num_char <- c(1, 2, 3, "a")
-num_logical <- c(1, 2, 3, TRUE)
-char_logical <- c("a", "b", "c", TRUE)
-tricky <- c(1, 2, 3, "4")
+num_char <- c(1, 2, 3, "a") # character
+num_logical <- c(1, 2, 3, TRUE) # numeric; TRUE -> 1; FALSE -> 0
+char_logical <- c("a", "b", "c", TRUE) # character
+tricky <- c(1, 2, 3, "4") # character
 
 
 
