@@ -104,7 +104,7 @@ All burials are pretty much the same across occupation phases (@fig-boxplot).
 شيء بالعربي
 ]{.arabic}
 
-![Caption.](./figures/phase-height-boxplot.png)
+![Caption.](figures/phase-height-boxplot.png)
 
 ```{r}
 knitr::include_graphics("../figures/phase-height-boxplot.png")
