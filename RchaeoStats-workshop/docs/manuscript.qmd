@@ -82,6 +82,7 @@ Here is a figure.
 
 ```{r}
 #| label: fig-boxplot
+#| fig-cap: "This is a figure."
 mortuary_data |>
   filter(Phase != "disturbed") |>
   ggplot(aes(x = Phase, y = Length, fill = Phase)) +
