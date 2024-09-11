@@ -95,8 +95,9 @@ mortuary_data |>
 
 All burials are pretty much the same across occupation phases (@fig-boxplot).
 
+[
 شيء بالعربي
-
+]{.arabic}
 
 ![Caption.](./figures/phase-height-boxplot.png)
 
