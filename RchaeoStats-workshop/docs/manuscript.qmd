@@ -69,6 +69,8 @@ mortuary_data |>
 ```
 
 
+I did some things. I put them in @tbl-summary-stats.
+
 
 
 
