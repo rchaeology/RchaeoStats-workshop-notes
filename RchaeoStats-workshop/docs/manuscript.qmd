@@ -57,6 +57,7 @@ I just learned R, and couldn't wait to use it. I'm using R version
 ```{r}
 #| echo: false
 #| label: tbl-summary-stats
+#| tbl-cap: "This is a table."
 mortuary_data |>
   group_by(Phase) |>
   summarise(
