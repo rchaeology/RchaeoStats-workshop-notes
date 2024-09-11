@@ -7,14 +7,12 @@ engine: knitr
 execute: 
   warning: false
   echo: false
-knitr:
-  opts_chunk: 
-    fig-path: "figures/"
+# knitr:
+#   opts_chunk: 
+#     fig-path: "figures/"
 crossref: 
   tbl-prefix: "Tabelle"
   fig-prefix: "Abbildung"
-resources: 
-  - figures
 ---
 
 ```{r}
