@@ -84,8 +84,12 @@ Here is a figure.
 #| label: fig-boxplot
 mortuary_data |>
   filter(Phase != "disturbed") |>
-  ggplot(aes(x = Phase, y = Length)) +
-    geom_violin()
+  ggplot(aes(x = Phase, y = Length, fill = Phase)) +
+    geom_violin() +
+    geom_boxplot(
+      width = 0.2
+    ) +
+    theme_minimal()
 ```
 
 All burials are pretty much the same across occupation phases (@fig-boxplot).
