@@ -13,6 +13,8 @@ knitr:
 crossref: 
   tbl-prefix: "Tabelle"
   fig-prefix: "Abbildung"
+resources: 
+  - figures
 ---
 
 ```{r}
