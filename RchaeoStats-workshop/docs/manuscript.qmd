@@ -56,6 +56,7 @@ I just learned R, and couldn't wait to use it. I'm using R version
 
 ```{r}
 #| echo: fenced
+#| label: table-1
 mortuary_data |>
   group_by(Phase) |>
   summarise(
