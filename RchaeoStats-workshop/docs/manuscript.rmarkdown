@@ -20,6 +20,8 @@ library(here)
 mortuary_data <- read_csv(here("data/mortuary_clean.csv"))
 ```
 
+
+
 # Title
 ## Section
 ### Subsection
@@ -60,6 +62,8 @@ I just learned R, and couldn't wait to use it. I'm using R version
 
 ## Results
 
+
+
 ```{r}
 #| echo: false
 #| label: tbl-summary-stats
@@ -75,10 +79,14 @@ mortuary_data |>
 ```
 
 
+
+
 I did some things. I put them in @tbl-summary-stats.
 
 
 Here is a figure.
+
+
 
 ```{r}
 #| label: fig-boxplot
@@ -88,7 +96,10 @@ mortuary_data |>
     geom_violin()
 ```
 
+
+
 All burials are pretty much the same across occupation phases (@fig-boxplot).
+
 
 
 
