@@ -1,0 +1,62 @@
+---
+title: "Symbolic Material Culture within an Ancient Catastrophic Temple Complex"
+author: Dr. Henry Walton Jones Jr.
+date: 1984-01-01
+format: html
+engine: knitr
+---
+
+```{r}
+library(tidyverse)
+library(here)
+
+mortuary_data <- read_csv(here("data/mortuary_data.csv"))
+```
+
+# Title
+## Section
+### Subsection
+#### etc.
+
+## Introduction
+
+This is a **totally made-up** study on a *completely* fictional archaeological
+site.  
+But the data are ***very*** real.
+
+Create a new paragraph.
+
+## Materials
+
+Here is a list of excavation materials:
+
+- Whip
+  + for carefully excavating ancient material
+- Hat
+  + protection from sun
+- Gun
+  + keep away the cats
+  
+Order of priority:
+
+1. Something
+  i) Gun
+      a. one more thing...
+2. Stick
+3. Whip
+4. Hat
+
+## Methods
+
+I just learned R, and couldn't wait to use it. I'm using R version
+`r version$version.string`.
+
+
+
+
+
+
+
+
+
+
