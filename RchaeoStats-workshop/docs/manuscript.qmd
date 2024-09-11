@@ -55,7 +55,7 @@ I just learned R, and couldn't wait to use it. I'm using R version
 ## Results
 
 ```{r}
-#| echo: false
+#| echo: fenced
 mortuary_data |>
   group_by(Phase) |>
   summarise(
