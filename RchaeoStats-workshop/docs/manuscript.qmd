@@ -11,7 +11,7 @@ execute:
   echo: false
 knitr:
   opts_chunk:
-    fig-path: "../figures/"
+    fig-path: "figures/"
 crossref: 
   tbl-prefix: "Tabelle"
   fig-prefix: "Abbildung"
@@ -102,7 +102,8 @@ All burials are pretty much the same across occupation phases (@fig-boxplot).
 
 شيء بالعربي
 
-![Caption.](figures/phase-height-boxplot.png)
+
+![Caption.](../figures/phase-height-boxplot.png)
 
 
 
