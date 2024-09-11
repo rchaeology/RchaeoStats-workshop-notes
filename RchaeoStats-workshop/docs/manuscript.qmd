@@ -7,9 +7,9 @@ engine: knitr
 execute: 
   warning: false
   echo: false
-# knitr:
-#   opts_chunk: 
-#     fig-path: "figures/"
+knitr:
+  opts_chunk:
+    fig-path: "../figures/"
 crossref: 
   tbl-prefix: "Tabelle"
   fig-prefix: "Abbildung"
@@ -98,9 +98,7 @@ mortuary_data |>
 
 All burials are pretty much the same across occupation phases (@fig-boxplot).
 
-[
 شيء بالعربي
-]{.arabic}
 
 ![Caption.](figures/phase-height-boxplot.png)
 
