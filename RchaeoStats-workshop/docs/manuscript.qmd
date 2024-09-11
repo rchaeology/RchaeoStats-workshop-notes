@@ -85,7 +85,7 @@ mortuary_data |>
     geom_violin()
 ```
 
-
+All burials are pretty much the same across occupation phases (@fig-boxplot).
 
 
 
