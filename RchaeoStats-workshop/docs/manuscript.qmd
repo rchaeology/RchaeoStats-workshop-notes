@@ -56,7 +56,6 @@ I just learned R, and couldn't wait to use it. I'm using R version
 
 ```{r}
 #| echo: false
-#| eval: false
 mortuary_data |>
   group_by(Phase) |>
   summarise(
