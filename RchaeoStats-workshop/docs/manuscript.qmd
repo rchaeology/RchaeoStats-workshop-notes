@@ -63,7 +63,8 @@ mortuary_data |>
     mean = mean(Length, na.rm = T),
     sd = sd(Length, na.rm = T)
   ) |>
-  arrange(desc(mean))
+  arrange(desc(mean)) |>
+  knitr::kable()
 ```
 
 
