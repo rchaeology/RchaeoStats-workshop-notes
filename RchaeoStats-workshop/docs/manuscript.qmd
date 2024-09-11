@@ -9,7 +9,7 @@ execute:
   echo: false
 knitr:
   opts_chunk: 
-    fig-path: "../figures
+    fig-path: "../figures"
 crossref: 
   tbl-prefix: "Tabelle"
   fig-prefix: "Abbildung"
