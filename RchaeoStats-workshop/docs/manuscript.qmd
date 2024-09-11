@@ -10,7 +10,7 @@ engine: knitr
 library(tidyverse)
 library(here)
 
-mortuary_data <- read_csv(here("data/mortuary_data.csv"))
+mortuary_data <- read_csv(here("data/mortuary_clean.csv"))
 ```
 
 # Title
@@ -51,6 +51,17 @@ Order of priority:
 I just learned R, and couldn't wait to use it. I'm using R version
 `r version$version.string`.
 
+## Results
+
+```{r}
+mortuary_data |>
+  group_by(Phase) |>
+  summarise(
+    mean = mean(Length, na.rm = T),
+    sd = sd(Length, na.rm = T)
+  ) |>
+  arrange(desc(mean))
+```
 
 
 
