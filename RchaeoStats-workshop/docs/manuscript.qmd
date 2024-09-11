@@ -7,9 +7,6 @@ engine: knitr
 execute: 
   warning: false
   echo: false
-knitr: 
-  chunk-opts:
-    message: false
 ---
 
 ```{r}
