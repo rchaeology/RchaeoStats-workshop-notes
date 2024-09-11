@@ -125,9 +125,125 @@ mortuary_data |>
     )
   )
 
+view(mortuary_data)
+
+## Pivotting
+
+golden_long <- mortuary_data |>
+  pivot_longer(Golden_bead)
+
+golden_long$Golden_bead # no longer exists
+
+golden_long$name
+golden_long$value
+
+artefact_long <- mortuary_data |>
+  pivot_longer(
+    Agate_bead:Kendi_mouth
+  )
+
+#view(artefact_long)
+
+
+artefact_long <- mortuary_data |>
+  pivot_longer(
+    Agate_bead:Kendi_mouth,
+    names_to = "artefact",
+    values_to = "count"
+  )
+
+artefact_long$artefact
+
+artefact_long |>
+  ggplot(aes(x = artefact, y = count)) +
+    geom_col()
+
+artefact_long |>
+  filter(artefact != "IndoPacific_bead",
+         count > 1, count < 10) |>
+  ggplot(aes(x = artefact, y = count)) +
+    geom_col()
+
+artefact_long |>
+  filter(artefact != "IndoPacific_bead") |>
+  ggplot(aes(x = artefact, y = count, fill = Phase)) +
+    geom_col()
+
+bead_long <- mortuary_data |>
+  pivot_longer(
+    Agate_bead:Kendi_mouth,
+    names_to = "artefact",
+    values_to = "count"
+  ) |>
+  mutate(
+    bead = if_else(str_detect(artefact, "bead"), "bead", "other")
+  )
+
+artefact_long |>
+  ggplot(aes(x = bead, y = count, fill = Phase)) +
+  geom_col(position = "dodge")
+
+#str_detect(artefact_long$artefact, "bead")
+
+artefact_long |>
+  ggplot(aes(x = artefact, y = count, fill = Phase)) +
+    geom_col()
+
+percent_artefacts <- artefact_long |>
+  group_by(Phase, artefact) |>
+  summarise(
+    n = sum(count, na.rm = T)
+  ) |>
+  group_by(Phase) |>
+  mutate(percent = (n / sum(n)) * 100)
+
+percent_artefacts |>
+  ggplot(aes(x = Phase, y = percent, fill = artefact)) +
+  geom_col()
+
+artefact_long |>
+  ggplot(aes(x = Phase, y = count, fill = Phase)) +
+  geom_col() +
+  facet_wrap(~ artefact, scales = "free_y")
+
+# the longer format makes it easier to summarise artefacts
+artefact_long |>
+  summarise(
+    count = sum(count, na.rm = T),
+    .by = c(artefact, Phase)
+  )
+
+artefact_long |>
+  group_by(artefact, Gender) |>
+  summarise(
+    mean = mean(count, na.rm = T),
+    median = median(count, na.rm = T),
+    sd = sd(count, na.rm = T)
+  )
+
+artefact_long |>
+  group_by(ID, Phase, Age, Gender) |>
+summarise(
+  count = sum(count, na.rm = T)
+)  
+
+# back to wide
+
+artefact_wide <- artefact_long |>
+  pivot_wider(
+    names_from = artefact,
+    values_from = count
+  )
+
+dim(artefact_wide)
+dim(artefact_wide) == dim(mortuary_data)
+
+
+  
 
 
 
 
 
 
+  
