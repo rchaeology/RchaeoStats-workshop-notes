@@ -34,9 +34,8 @@ Here are the shortened urls linking to the modified data:
   + [:page_facing_up: manuscript.qmd](/RchaeoStats-workshop/docs/manuscript.qmd)
 - :file_folder: figures/
 - :file_folder: scripts/
-  + [:page_facing_up: 01_data-clean.R](/RchaeoStats-workshop/scripts/01_data-cleaning.R)
-  + [:page_facing_up: 02_data-viz.R](/RchaeoStats-workshop/scripts/02_data-viz.R)
-  + [:page_facing_up: 03_data-transform.R](/RchaeoStats-workshop/scripts/03_data-transform.R)
+  + [:page_facing_up: 01_data-viz.R](/RchaeoStats-workshop/scripts/01_data-viz.R)
+  + [:page_facing_up: 02_data-transform.R](/RchaeoStats-workshop/scripts/02_data-transform.R)
 
 
 ## License
