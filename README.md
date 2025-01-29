@@ -13,8 +13,8 @@ The datasets used in the workshop are slightly modified versions of published da
 
 Here are the shortened urls linking to the modified data:
 
-- *sheep-data.csv*: <https://edu.nl/>
-- *mortuary-data.xlsx*: <https://edu.nl/>
+- *sheep-data.csv*: <https://edu.nl/3hru6>
+- *mortuary-data.xlsx*: <https://edu.nl/x4bqv>
 
 
 ## Repository organisation
@@ -25,7 +25,7 @@ Here are the shortened urls linking to the modified data:
 
 [example-workflow.R](./example-workflow.R)
 
-[RchaeoStats-workshop]/
+[RchaeoStats-workshop](./RchaeoStats-workshop)/
 
 - :file_folder: data/
 - :file_folder: data-raw/
