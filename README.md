@@ -1,8 +1,8 @@
-# [Name of workshop]
+# RchaeoStats @ Leidenuniv
 
-R workshop at [Location], [Date].
+R workshop at Faculty of Archaeology, Leiden University, 19 Feb - 05 March.
 
-The workshop materials are still under development and are not yet available.
+The workshop materials are available here: https://rchaeology.github.io/RchaeoStats
 The scripts, data, and Quarto document created during the workshop 
 can be found below.
 
