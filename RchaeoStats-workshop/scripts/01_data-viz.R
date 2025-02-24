@@ -68,9 +68,42 @@ mortuary_data |>
 
 # Continuous variables ----------------------------------------------------
 
+# histogram
 mortuary_data |>
   ggplot(aes(x = Length)) +
     geom_histogram()
+
+# picking different bin sizes
+
+mortuary_data |>
+  ggplot(aes(x = Length)) +
+  geom_histogram(bins = 20)
+
+# density plot
+mortuary_data |>
+  ggplot(aes(x = Length)) +
+  geom_density() +
+  geom_vline( # add a line at the mean
+    xintercept = mean(mortuary_data$Length, na.rm = TRUE),
+    linetype = "dashed"
+  )
+
+# plot the levels of Layer
+mortuary_data |>
+  ggplot(aes(x = Length, fill = as_factor(Layer))) +
+    geom_density(alpha = 0.6)
+
+mortuary_data |>
+  ggplot(aes(x = Length, fill = Phase)) +
+  geom_density() +
+  facet_wrap(~ Phase, ncol = 1)
+
+
+
+
+
+
+
 
 
 
