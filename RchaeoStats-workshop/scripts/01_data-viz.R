@@ -7,6 +7,9 @@ mortuary_data |>
   ggplot(aes(x = Length, y = Width)) +
     geom_point()
 
+
+# Categorical variables ---------------------------------------------------
+
 mortuary_data |>
   ggplot(aes(x = Phase)) +
     geom_bar()
@@ -61,6 +64,10 @@ mortuary_data |>
     geom_bar(width = 1) +
     coord_polar("y", start = 0) +
     theme_void()
+
+
+# Continuous variables ----------------------------------------------------
+
 
 
 
