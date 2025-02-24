@@ -140,9 +140,11 @@ mortuary_data |>
       height = 0.2,
       alpha = 0.4
     ) +
-  theme(legend.position = "none")
+  theme_minimal() +
+  theme(legend.position = "none",
+        axis.title = element_text(size = 40, colour = "tomato"))
 
-
+ggsave(here("figures/violin-box-jitter.png"), dpi = 600, width = 5, height = 6, units = "in")
 
 
 
