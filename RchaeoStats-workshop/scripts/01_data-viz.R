@@ -68,7 +68,9 @@ mortuary_data |>
 
 # Continuous variables ----------------------------------------------------
 
-
+mortuary_data |>
+  ggplot(aes(x = Length)) +
+    geom_histogram()
 
 
 
