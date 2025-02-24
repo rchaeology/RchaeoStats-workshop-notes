@@ -14,6 +14,12 @@ mortuary_data |>
   ggplot(aes(x = Phase)) +
     geom_bar()
 
+mortuary_data |>
+  ggplot(aes(x = fct_rev(fct_infreq(Phase)))) +
+  geom_bar() +
+  coord_flip() +
+  labs(x = "Phase")
+
 # Factors
 levels(mortuary_data$Phase)
 phase_factor <- as_factor(mortuary_data$Phase)
@@ -119,6 +125,24 @@ mortuary_data |>
 mortuary_data |>
   ggplot(aes(x = Length, y = Width)) +
   geom_point(aes(col = Phase, size = Height, shape = as_factor(Layer)))
+
+# Mixed variables
+
+mortuary_data |>
+  ggplot(aes(y = Length, x = Phase)) +
+    geom_violin(aes(fill = Phase)) +
+    geom_boxplot(
+      outlier.shape = NA,
+      width = 0.2
+    ) +
+    geom_jitter(
+      width = 0.2,
+      height = 0.2,
+      alpha = 0.4
+    ) +
+  theme(legend.position = "none")
+
+
 
 
 
