@@ -98,7 +98,27 @@ mortuary_data |>
   geom_density() +
   facet_wrap(~ Phase, ncol = 1)
 
+# scatterplots
 
+mortuary_data |>
+  ggplot(aes(x = Length, y = Width)) +
+    geom_point()
+
+# make it more fun
+
+mortuary_data |>
+  ggplot(aes(x = Length, y = Width)) +
+  geom_point(col = "#26c3c9")
+
+# size and shape as single values
+mortuary_data |>
+  ggplot(aes(x = Length, y = Width)) +
+  geom_point(aes(col = Phase), size = 3, shape = 2)
+
+# size and shape mapped to variables
+mortuary_data |>
+  ggplot(aes(x = Length, y = Width)) +
+  geom_point(aes(col = Phase, size = Height, shape = as_factor(Layer)))
 
 
 
