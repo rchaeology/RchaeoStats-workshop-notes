@@ -62,5 +62,22 @@ summarise(
   sd_golden = sd(Golden_bead, na.rm = TRUE),
   .by = Phase
 ) 
-?summarise  
 
+# sample/group size
+mortuary_data |>
+  group_by(Phase) |>
+  summarise(n = n())
+
+mortuary_data |>
+  count(Phase)
+
+
+# Across ------------------------------------------------------------------
+
+mortuary_data |>
+  group_by(Phase) |>
+  summarise(
+    across(c(Golden_bead, Glass_bead, IndoPacific_bead), ~ mean(.x, na.rm = T))
+  )
+  
+  
