@@ -74,6 +74,8 @@ mortuary_data |>
 
 # Across ------------------------------------------------------------------
 
+# The same operation/functino across multiple columns
+
 mortuary_data |>
   group_by(Phase) |>
   summarise(
@@ -116,6 +118,38 @@ mortuary_data |>
   )
 
 ## End of exercise
+
+# multiple operations/functions across
+
+mortuary_data |>
+  group_by(Phase) |>
+  summarise(
+    across(
+      #everything(),
+      ends_with("bead"),
+      list(
+        mean = ~ mean(.x, na.rm = T),
+        sd = ~ sd(.x, na.rm = T)
+      )
+    )
+  )
+
+my_list <- list(
+  "a_vector" = mortuary_data$Width,
+  "a_data_frame" = mortuary_data,
+  "a_function" = mean,
+  "etc" = "etc"
+)
+
+my_list$a_vector
+my_list$a_data_frame$Layer[3]
+my_list[1] # first item of the list
+my_list[[1]] # first item of the list in its actual original object
+
+
+
+
+
 
 
 
