@@ -79,5 +79,25 @@ mortuary_data |>
   summarise(
     across(c(Golden_bead, Glass_bead, IndoPacific_bead), ~ mean(.x, na.rm = T))
   )
+
+mortuary_data |>
+  group_by(Phase) |>
+  summarise(
+    across(Agate_bead:Metal_piece, ~ mean(.x, na.rm = T))
+  )
+
+# Selection helpers
+mortuary_data |>
+  group_by(Phase) |>
+  summarise(
+    across(contains("bead"), ~ mean(.x, na.rm = T))
+  )
+
+mortuary_data |>
+  group_by(Phase) |>
+  summarise(
+    across(ends_with("_bead"), ~ mean(.x, na.rm = T))
+  )
+
   
   
