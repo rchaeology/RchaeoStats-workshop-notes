@@ -187,7 +187,42 @@ artefact_longer |>
   geom_col() +
   scale_fill_viridis_d(option = "plasma")
 
+percent_artefact <- artefact_longer |>
+  group_by(Phase, artefact) |>
+  summarise(n = sum(count, na.rm = TRUE)) |>
+  group_by(Phase) |>
+  mutate(percent = (n / sum(n)) * 100)
+
+percent_artefact |>
+  ggplot(aes(x = Phase, y = percent, fill = artefact)) +
+    geom_col()
 
 
+artefact_longer |>
+  remove_missing(vars = "Phase") |>
+  ggplot(aes(x = Phase, y = count, fill = Phase)) +
+  geom_col() +
+  facet_wrap(~ artefact, scales = "free_y")
+
+artefact_longer |>
+  filter(str_detect(artefact, "bead")) |>
+  ggplot(aes(x = artefact, y = count)) +
+  geom_col()
+
+str_detect(artefact_longer$artefact, "bead")
+
+total_artefact_count <- artefact_longer |>
+  group_by(Phase, artefact) |>
+  summarise(
+    total_count = sum(count, na.rm = T)
+  ) |>
+  ungroup()
+
+write_csv(total_artefact_count, here("data/total-artefact-counts.csv"))
+
+artefact_wide <- artefact_longer |>
+  pivot_wider(names_from = artefact, values_from = count)
+
+dim(artefact_wide) == dim(mortuary_data)
 
 
