@@ -99,5 +99,24 @@ mortuary_data |>
     across(ends_with("_bead"), ~ mean(.x, na.rm = T))
   )
 
+mortuary_data |>
+  select(ends_with("bead"))
   
-  
+
+## Exercise
+# select all columns with a 'Metal' artefact, then calculate the mean count for each Phase
+
+mortuary_data |>
+  group_by(Phase) |> 
+  summarise(
+    across(
+      contains("Metal"),
+      ~ mean(.x, na.rm = T)
+    )
+  )
+
+
+
+
+
+
