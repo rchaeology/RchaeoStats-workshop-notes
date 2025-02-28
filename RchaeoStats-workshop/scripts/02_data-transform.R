@@ -142,10 +142,9 @@ my_list <- list(
 )
 
 my_list$a_vector
-my_list$a_data_frame$Layer[3]
+my_list$a_data_frame$Layer[3] # third item of the Layer variable from the data frame from the list
 my_list[1] # first item of the list
 my_list[[1]] # first item of the list in its actual original object
-
 
 
 
