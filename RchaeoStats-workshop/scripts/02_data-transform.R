@@ -147,10 +147,45 @@ my_list[1] # first item of the list
 my_list[[1]] # first item of the list in its actual original object
 
 
+# Pivoting ----------------------------------------------------------------
+
+artefact_long <- mortuary_data |>
+  select(ID, Phase, Agate_bead, Golden_bead) |>
+  pivot_longer(Agate_bead:Golden_bead)
+
+artefact_long$value
+
+artefact_longer <- mortuary_data |>
+  pivot_longer(
+    Agate_bead:Metal_piece,
+    names_to = "artefact",
+    values_to = "count"
+  )
+dim(artefact_longer)
 
 
+artefact_longer |>
+  group_by(artefact) |>
+  summarise(
+    mean = mean(count, na.rm = T),
+    sd = sd(count, na.rm = T)
+  )
+mortuary_data$Knit
 
+# makes the artefacts easier to plot because we have a single column for artefact name and single column for the counts
+artefact_longer |>
+  ggplot(aes(x = artefact, y = count)) +
+  geom_col()
 
+artefact_longer |>
+  filter(
+    artefact != "IndoPacific_bead",
+#    !is.na(Phase) # can use this instead of remove_missing(vars = "Phase")
+    ) |>
+  remove_missing(vars = "Phase") |>
+  ggplot(aes(x = artefact, y = count, fill = Phase)) +
+  geom_col() +
+  scale_fill_viridis_d(option = "plasma")
 
 
 
