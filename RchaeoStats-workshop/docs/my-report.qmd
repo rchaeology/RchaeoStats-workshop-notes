@@ -1,0 +1,105 @@
+---
+title: "Symbolic Material Culture within an Ancient Catastrophic Temple Complex"
+author: Dr. Henry Walton Jones Jr.
+date: "1984"
+format: 
+  html: default
+  pdf: default
+  docx: default
+  revealjs: default
+engine: knitr
+execute: 
+  eval: true
+  echo: false
+---
+
+<!-- [comment] -->
+<!-- # Title comments in markdown \
+## Section
+### Subsection
+#### Subsubsection
+##### etc -->
+
+```{r}
+#| label: setup
+#| include: false
+
+library(tidyverse)
+library(here)
+
+mortuary_data <- read_csv(here("data/mortuary_clean.csv"))
+```
+
+
+## Introduction
+
+This is a totally made-up study on a completely fictional archaeological site,
+but the data are very real.  
+Blah, blah, blah.
+
+It is **very** important to state that *any* ***conclusions*** reached in this report are the
+ramblings of a _fictional_ character.
+
+## Materials
+
+Here is a list of materials used during excavation:
+
+- whip
+  + for carefully excavating ancient materials
+    * something else
+- hat
+  + for protection form the hot sun
+    + something else
+- gun
+  + to keep away dig-site cats
+
+In order of importance
+
+1. gun
+2. hat
+3. whip
+
+## Methods
+
+I recently learned how to use R and couldn't wait to use it in this study!
+I am using `r version$version.string` `r version$nickname`.
+
+## Results
+
+```{r}
+#| label: tbl-summary-phase
+#| tbl-cap: "This is a useful caption."
+#| echo: false
+mortuary_data |>
+  mutate(Area = Length * Width) |>
+  group_by(Phase) |>
+  summarise(
+    mean = mean(Area, na.rm = T),
+    sd = sd(Area, na.rm = T)
+  ) |>
+  arrange(desc(mean)) |>
+  knitr::kable(col.names = c("Phase", "Mean (cm^2)", "SD"))
+```
+
+Here's a figure
+
+```{r}
+#| warning: false
+#| label: fig-phase-plot
+mortuary_data |>
+  filter(Phase != "disturbed") |>
+  ggplot(aes(x = Phase, y = Length)) +
+  geom_violin(aes(fill = Phase)) +
+  geom_boxplot(width = 0.2) +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+
+This argument is supported by @tbl-summary-phase and @fig-phase-plot
+
+
+![Caption.](violin-box-jitter.png)
+
+
+
+
