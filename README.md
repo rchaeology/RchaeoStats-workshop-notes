@@ -2,7 +2,8 @@
 
 R workshop at [Location], [Date].
 
-The workshop materials are still under development and are not yet available.
+The workshop materials are available here: https://rchaeology.github.io/RchaeoStats
+
 The scripts and data (and Quarto document, depending on the workshop) created during the workshop 
 can be found below.
 
