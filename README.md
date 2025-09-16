@@ -1,11 +1,10 @@
 # [Name of workshop]
 
-R workshop at [Location], [Date].
+R workshop at BABAO, 18th September 2025.
 
 The workshop materials are available here: https://rchaeology.github.io/RchaeoStats
 
-The scripts and data (and Quarto document, depending on the workshop) created during the workshop 
-can be found below.
+The scripts and data created during the workshop can be found below.
 
 ## Data
 
