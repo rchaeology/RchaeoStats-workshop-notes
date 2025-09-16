@@ -3,9 +3,8 @@
 R workshop at [Location], [Date].
 
 The workshop materials are still under development and are not yet available.
-The scripts, data, and Quarto document created during the workshop 
+The scripts and data (and Quarto document, depending on the workshop) created during the workshop 
 can be found below.
-
 
 ## Data
 
@@ -15,7 +14,7 @@ Here are the shortened urls linking to the modified data:
 
 - *sheep-data.csv*: <https://edu.nl/3hru6>
 - *mortuary-data.xlsx*: <https://edu.nl/x4bqv>
-
+- *PMCOC_dental_data.lst* <https://edu.nl/y8buk>
 
 ## Repository organisation
 
@@ -41,7 +40,6 @@ Here are the shortened urls linking to the modified data:
   + [:page_facing_up: 02_data-viz.R](/RchaeoStats-workshop/scripts/02_data-viz.R)
   + [:page_facing_up: 03_data-transform.R](/RchaeoStats-workshop/scripts/03_data-transform.R)
 
-
 ## License
 
 The data in *mortuary-data.xlsx* are from Li-Ying Wang and Ben Marwick (2021; https://doi.org/10.17605/OSF.IO/XGA6N)
@@ -53,7 +51,6 @@ and are licensed under [CC BY Attribution 4.0 International](https://creativecom
 The data in *PMCOC_dental_path.lst* are from the Wellcome Osteological Research Database (WORD).
 
 The code is licensed under [The Unlicense](https://unlicense.org/) (public domain).
-
 
 ## Resources
 
