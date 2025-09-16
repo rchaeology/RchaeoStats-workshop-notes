@@ -25,6 +25,9 @@ Here are the shortened urls linking to the modified data:
 
 [example-workflow.R](./example-workflow.R)
 
+:file_folder: data/
+- [PMCOC_dental_path.lst](/data/PMCOC_dental_path.lst)
+
 [RchaeoStats-workshop](./RchaeoStats-workshop)/
 
 - :file_folder: data/
@@ -46,6 +49,8 @@ and are licensed under [CC BY Attribution 4.0 International](https://creativecom
 
 The data in *sheep-data.csv* are from Harding et al. (2022; https://doi.org/10.1101/2022.12.24.521859; https://zenodo.org/doi/10.5281/zenodo.10276146)
 and are licensed under [CC BY Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/).
+
+The data in *PMCOC_dental_path.lst* are from the Wellcome Osteological Research Database (WORD).
 
 The code is licensed under [The Unlicense](https://unlicense.org/) (public domain).
 
