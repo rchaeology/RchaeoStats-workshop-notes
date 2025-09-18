@@ -40,4 +40,36 @@ dim_index <- sheep_data |>
   mutate(Dl_GLl = Dl / GLl * 100) |>
   select(specID, Site, GLl, Dl) # select specific columns to keep
 
+select(sheep_data, 1, 3, 7, 9)
+
+select(sheep_data, !c(Taxon, Zone, group))
+
+# grouping and summarising
+
+dimensions <- sheep_data |>
+  filter(Site != "DOR") |>
+  select(specID, Site, GLl, Bd, Dl) |>
+  mutate(
+    Dl_GLl = Dl / GLl * 100,
+    Bd_Dl = Bd / Dl * 100
+  )
+
+dimensions |>
+  group_by(Site) |>
+  summarise(
+    n = n(),
+    mean_Dl_GLl = mean(Dl_GLl),
+    sd_Dl_GLl = sd(Dl_GLl)
+  )
+
+dimensions |>
+  ggplot(aes(x = Site, y = Dl_GLl)) +
+  geom_violin(aes(fill = Site)) + # violin will be displayed behind the boxplots
+  geom_boxplot(width = 0.2) +
+  theme_bw() +
+  theme(legend.position = "none")
+
+ggsave("my-first-plot.png")
+  
+  
 
